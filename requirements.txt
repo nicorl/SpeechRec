@@ -1,0 +1,14 @@
+certifi==2018.8.24
+cffi==1.14.5
+mysql-connector-python==8.0.25
+pocketsphinx==0.1.15
+protobuf==3.16.0
+PyAudio==0.2.11
+pycparser==2.20
+six==1.16.0
+sounddevice==0.4.1
+speech-recognition-fork==3.8.1.2020.12.6
+SpeechRecognition==3.8.1
+srt==3.4.1
+vosk==0.3.27
+wincertstore==0.2
