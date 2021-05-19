@@ -1,2 +1,3 @@
-*/obs/
+*obs
 test*
+__pycache__/
