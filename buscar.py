@@ -46,11 +46,23 @@ def matchear(palabras):
     elif 'hdmi' in x:
         return 'el cable hdmi nos está dando problemas'
     else:
-        return "nope, no sé que quiere la gente, deberíamos almacenar las palabras y averiguarlo"
+        pass
 
 
-# def check(word, list):
-#    if word in list:
-#        print("Yes!")
-#    else:
-#        print("Nope!")
+def check(word, list):
+    if word in list:
+        print("Yes!" + list)
+    else:
+        print("Nope!" + list)
+
+def listcheck(list1, list2):
+    if not list2:
+        pass
+    else:
+        result = all(elem in list1  for elem in list2)
+        print(list1)
+        print(list2)
+        if result:
+            return True 
+        else: 
+            return False

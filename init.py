@@ -74,27 +74,27 @@ try:
     with sd.RawInputStream(samplerate=args.samplerate, blocksize=8000, device=args.device, dtype='int16',
                            channels=1, callback=callback):
         print('#' * 80)
-        print('Press Ctrl+C to stop the recording')
+        print('Pulsa Ctrl+C para finalizar')
         print('#' * 80)
 
         rec = vosk.KaldiRecognizer(model, args.samplerate)
         numeros = bsc.conectdbnumeros()
         bebidas = bsc.conectdbbebidas()
-        print(bebidas)
+        print(numeros)
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
                 # print(rec.Result())
                 voicecap = json.loads(rec.Result())
-                # print(voicecap["text"])
                 print(bsc.matchear(voicecap["text"]))
+                print(bsc.listcheck(numeros, voicecap["text"]))
             # else:
                 # print(rec.PartialResult())
             if dump_fn is not None:
                 dump_fn.write(data)
 
 except KeyboardInterrupt:
-    print('\nDone')
+    print('\nListo')
     parser.exit(0)
 except Exception as e:
     parser.exit(type(e).__name__ + ': ' + str(e))
